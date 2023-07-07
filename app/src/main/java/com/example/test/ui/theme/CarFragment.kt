@@ -20,12 +20,11 @@ class CarFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_car, container, false)
-        recyclerView = requireView().findViewById(R.id.rv_car)
+        recyclerView = view?.findViewById(R.id.rv_car)!!
         adapter = CarAdapter(getItemList(), requireContext())
         recyclerView.adapter = adapter
         return view
     }
-
     private fun getItemList(): List<CarModel> {
         val itemList = mutableListOf<CarModel>()
         itemList.add(CarModel("2023", "Mercedes", R.drawable.mercedes.toString()))
