@@ -22,6 +22,8 @@ class CarFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_car, container, false)
         recyclerView = requireView().findViewById(R.id.rv_car)
         adapter = CarAdapter(getItemList(), requireContext())
+        recyclerView.adapter = adapter
+        return view
     }
 
     private fun getItemList(): List<CarModel> {
